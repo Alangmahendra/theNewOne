@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- stable
+before_install:
+- tar -xzf credentials.tar.gz
+- npm i -g yarn
+install:
+- yarn
+script:
+- yarn test
+deploy:
+  provider: gae
+  keyfile: client-secret.json
+  project: alanglab-189602
